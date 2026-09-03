@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eskişehirspor Taraftar</title>
+<style>
+:root{--red:#c8102e;--black:#080808;--dark:#121212;--card:#1b1b1b;--muted:#aaa;--white:#fff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#0b0b0b;color:var(--white)}
+header{position:sticky;top:0;z-index:10;background:rgba(8,8,8,.95);border-bottom:2px solid var(--red);backdrop-filter:blur(8px)}
+.nav{max-width:1150px;margin:auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:900;font-size:20px}.badge{width:42px;height:42px;border-radius:50%;background:var(--red);display:grid;place-items:center;font-weight:900;border:3px solid #fff}
+nav a{color:#ddd;text-decoration:none;margin-left:18px;font-size:14px}nav a:hover{color:#fff}
+.hero{min-height:500px;display:grid;place-items:center;text-align:center;padding:70px 20px;background:radial-gradient(circle at 50% 20%,#3a0610 0,#0b0b0b 55%);border-bottom:1px solid #292929}
+.hero h1{font-size:clamp(38px,8vw,76px);margin:10px 0;font-weight:1000;letter-spacing:-2px}.hero h1 span{color:var(--red)}
+.hero p{color:#ccc;font-size:18px}.buttons{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:25px}
+.btn{padding:13px 20px;border-radius:10px;border:1px solid #444;background:#191919;color:#fff;text-decoration:none;font-weight:700;cursor:pointer}.btn.primary{background:var(--red);border-color:var(--red)}
+.container{max-width:1150px;margin:auto;padding:55px 20px}section{scroll-margin-top:80px}.title{display:flex;align-items:end;justify-content:space-between;gap:15px;margin-bottom:22px}.title h2{margin:0;font-size:30px}.title p{margin:0;color:var(--muted)}
+.match{background:linear-gradient(135deg,#171717,#101010);border:1px solid #303030;border-radius:18px;padding:28px;text-align:center;box-shadow:0 10px 30px #0005}.teams{display:flex;justify-content:center;align-items:center;gap:35px;font-size:22px;font-weight:900}.team{min-width:130px}.vs{color:var(--red);font-size:15px}.count{font-size:35px;font-weight:900;margin:20px 0 5px}.count small{font-size:12px;color:#999;font-weight:400}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}.card{background:var(--card);border:1px solid #303030;border-radius:16px;padding:22px}
+.news{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.news article{overflow:hidden;padding:0}.news .pic{height:145px;background:linear-gradient(135deg,#c8102e,#111);display:grid;place-items:center;font-size:45px}.news .body{padding:18px}.news h3{margin:0 0 8px;font-size:18px}.muted{color:#999;font-size:13px}
+table{width:100%;border-collapse:collapse}th,td{padding:12px 10px;border-bottom:1px solid #333;text-align:left}th{color:#aaa;font-size:12px}tr:first-child td{font-weight:800;color:#fff}
+.fixtures{display:grid;gap:10px}.fixture{display:flex;justify-content:space-between;align-items:center;padding:16px;background:#151515;border-radius:12px;border:1px solid #292929}.fixture strong{color:var(--red)}
+.poll label{display:block;margin:11px 0;padding:12px;background:#151515;border-radius:10px;cursor:pointer}.poll button{margin-top:8px}
+.result{margin-top:12px;color:#ddd}
+.chants{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.chant{padding:18px;border:1px solid #333;border-radius:12px;background:#151515}.chant button{float:right}
+footer{text-align:center;padding:35px 20px;color:#888;border-top:1px solid #292929}.red{color:var(--red)}
+@media(max-width:750px){nav{display:none}.grid,.news,.chants{grid-template-columns:1fr}.teams{gap:10px;font-size:17px}.team{min-width:100px}.count{font-size:28px}.container{padding:40px 15px}.hero{min-height:440px}}
+</style>
+</head>
+<body>
+<header><div class="nav"><div class="brand"><div class="badge">ES</div> ESKİŞEHİRSPOR TARAFTAR</div><nav><a href="#mac">Maç</a><a href="#fikstur">Fikstür</a><a href="#puan">Puan</a><a href="#haberler">Haberler</a><a href="#anket">Anket</a></nav></div></header>
+
+<main>
+<section class="hero">
+<div><div class="muted">🔴⚫ ŞEHRİN AŞKI • TRİBÜNÜN SESİ</div><h1>ESKİŞEHİR<span>SPOR</span></h1><p>Eskişehirspor taraftarının buluşma noktası.</p><div class="buttons"><a class="btn primary" href="#mac">Maç Bilgileri</a><a class="btn" href="#tahmin">Skor Tahmini</a></div></div>
+</section>
+
+<div class="container">
+<section id="mac"><div class="title"><h2>⏱️ Sıradaki Maç</h2><p>Maç günü geri sayımı</p></div>
+<div class="match"><div class="teams"><div class="team">🔴⚫<br>Eskişehirspor</div><div class="vs">VS</div><div class="team">Rakip Takım<br>⚽</div></div>
+<div class="count" id="countdown">Yükleniyor...</div><small class="muted">Maç tarihi ve rakip bilgilerini aşağıdaki JavaScript değişkeninden güncelleyebilirsin.</small></div></section>
+
+<section id="fikstur" style="margin-top:55px"><div class="title"><h2>📅 Maç Fikstürü</h2><p>Yaklaşan maçlar</p></div>
+<div class="fixtures">
+<div class="fixture"><span>Eskişehirspor 🆚 Rakip Takım</span><strong>12 Eylül • 19:00</strong></div>
+<div class="fixture"><span>Rakip Takım 🆚 Eskişehirspor</span><strong>19 Eylül • 16:00</strong></div>
+<div class="fixture"><span>Eskişehirspor 🆚 Rakip Takım</span><strong>26 Eylül • 19:00</strong></div>
+</div></section>
+
+<div class="grid" style="margin-top:55px">
+<section id="puan"><div class="title"><h2>🏆 Puan Durumu</h2></div><div class="card"><table><thead><tr><th>#</th><th>Takım</th><th>O</th><th>G</th><th>B</th><th>M</th><th>P</th></tr></thead><tbody>
+<tr><td>1</td><td>Eskişehirspor</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>2</td><td>Rakip Takım</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>3</td><td>Takım 3</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+</tbody></table></div></section>
+
+<section id="anket"><div class="title"><h2>🗳️ Taraftar Anketi</h2></div><div class="card poll"><b>Bu sezon takımımızın hedefi ne olmalı?</b>
+<label><input type="radio" name="poll" value="Şampiyonluk"> 🏆 Şampiyonluk</label><label><input type="radio" name="poll" value="Play-off"> 🔥 Play-off</label><label><input type="radio" name="poll" value="İyi bir sezon"> ❤️ İyi bir sezon</label>
+<button class="btn primary" onclick="vote()">Oyumu Ver</button><div id="pollResult" class="result"></div></div></section>
+</div>
+
+<section id="haberler" style="margin-top:55px"><div class="title"><h2>📰 Son Haberler</h2><p>Site yöneticisi tarafından güncellenebilir</p></div>
+<div class="news"><article class="card"><div class="pic">🔴⚫</div><div class="body"><h3>Es Es yeni sezona hazırlanıyor</h3><div class="muted">03 Eylül 2026</div><p>Takımımızın yeni sezon hazırlıkları devam ediyor.</p></div></article>
+<article class="card"><div class="pic">🏟️</div><div class="body"><h3>Tribünler yeni sezona hazır</h3><div class="muted">02 Eylül 2026</div><p>Taraftarlarımız sezon için heyecanla bekliyor.</p></div></article>
+<article class="card"><div class="pic">⚽</div><div class="body"><h3>İlk maç için geri sayım başladı</h3><div class="muted">01 Eylül 2026</div><p>Sezonun ilk karşılaşması için geri sayım başladı.</p></div></article></div></section>
+
+<section id="tahmin" style="margin-top:55px"><div class="title"><h2>⚽ Maç Kaç Kaç Biter?</h2><p>Taraftar tahminini gönder</p></div>
+<div class="card" style="text-align:center"><h3>Eskişehirspor 🆚 Rakip Takım</h3><div class="buttons"><input id="home" type="number" min="0" max="20" placeholder="Es Es" style="width:90px;padding:13px;border-radius:9px;border:1px solid #555;background:#111;color:white"><b style="padding:12px">-</b><input id="away" type="number" min="0" max="20" placeholder="Rakip" style="width:90px;padding:13px;border-radius:9px;border:1px solid #555;background:#111;color:white"></div><button class="btn primary" onclick="predict()">Tahminimi Gönder</button><div id="prediction" class="result"></div></div></section>
+
+<section style="margin-top:55px"><div class="title"><h2>🎵 Tribün Marşları</h2><p>Demo alanı</p></div><div class="chants"><div class="chant"><b>🔊 Es Es Tribün</b><button class="btn" onclick="demoPlay(this)">▶</button><p class="muted">Marş ses dosyanı site klasörüne ekleyebilirsin.</p></div><div class="chant"><b>🥁 Büyük Eskişehir</b><button class="btn" onclick="demoPlay(this)">▶</button><p class="muted">Marş ses dosyanı site klasörüne ekleyebilirsin.</p></div></div></section>
+</div>
+</main>
+<footer>🔴⚫ <b>Eskişehirspor Taraftar</b> • Taraftar yapımı web sitesi<br><span class="muted">Gerçek fikstür, puan ve haber verileri yönetici tarafından güncellenmelidir.</span></footer>
+
+<script>
+// MAÇ TARİHİNİ BURADAN DEĞİŞTİR:
+const matchDate = new Date("2026-09-12T19:00:00+03:00");
+function updateCountdown(){
+ const now=new Date(), diff=matchDate-now, el=document.getElementById("countdown");
+ if(diff<=0){el.textContent="MAÇ ZAMANI! 🔥";return}
+ const d=Math.floor(diff/86400000),h=Math.floor(diff%86400000/3600000),m=Math.floor(diff%3600000/60000),s=Math.floor(diff%60000/1000);
+ el.innerHTML=`${d} <small>gün</small> ${String(h).padStart(2,"0")} <small>saat</small> ${String(m).padStart(2,"0")} <small>dk</small> ${String(s).padStart(2,"0")} <small>sn</small>`;
+}
+setInterval(updateCountdown,1000);updateCountdown();
+function vote(){const x=document.querySelector('input[name="poll"]:checked');document.getElementById("pollResult").textContent=x?"Oyun kaydedildi: "+x.value+" 🔴⚫":"Önce bir seçenek seç."; }
+function predict(){const h=document.getElementById("home").value,a=document.getElementById("away").value;document.getElementById("prediction").textContent=(h!==""&&a!=="")?`Tahminin: Eskişehirspor ${h} - ${a} Rakip Takım 🔴⚫`:"İki skoru da gir."; }
+function demoPlay(btn){btn.textContent=btn.textContent==="▶"?"⏸":"▶";}
+</script>
+</body>
+</html>
